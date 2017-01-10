@@ -11,6 +11,7 @@
 #include "ControlPanel.h"
 #include "Menu.h"
 #include "Led.h"
+#include "Emotions.h"
 
 //changement
 
@@ -45,6 +46,13 @@ Sensor sensorAvD = Sensor(41, A12, 130, SensorType::infraR, 1);
     
 //------robot-------://
     Program robot = Program(2,3);
+
+//------ModuleExterne------://
+    ModuleExterne = ModuleExterne(A20,A21);
+    ModuleExterne magnetometre = ModuleExterne(33);
+    ModuleExterne capteurLumineux = ModuleExterne(34);
+    ModuleExterne capteur3 = ModuleExterne(36);
+    ModuleExterne capteur4 = ModuleExterne(38);
     
 
 void setup() {
@@ -74,7 +82,9 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
-
+   //-----TEST-------://
+      //fait tes test. 
+   
   //------menu-------://
     
     menu.runMenu(&robot,&controls,&frontLeds);
